@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "release-notes-from-pullrequests-action"
+version = "0.1.0"
+description = "Create release notes based on pull requests"
+authors = ["Miguel Teixeira <miguel.teixeira@poli.ufrj.br>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pygithub = "^2.1.1"
+ruff = "^0.1.7"
+pytest = "^7.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+release-notes-from-pullrequests = 'src.main:run'
