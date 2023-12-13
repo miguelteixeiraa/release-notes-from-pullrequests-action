@@ -21,4 +21,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-release-notes-from-pullrequests = 'src.main:run'
+release-notes-from-pullrequests = 'src.main:main'
