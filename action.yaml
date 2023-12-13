@@ -36,7 +36,11 @@ runs:
     - name: Create Release Notes from Pull Requests
       id: create-release-notes-from-pullrequests
       run: |
-        echo "release-notes=$(poetry run release-notes-from-pullrequests)" >> $GITHUB_OUTPUT
+        {
+          echo 'release-notes<<EOF'
+          poetry run release-notes-from-pullrequests
+          echo EOF
+        } >> "$GITHUB_OUTPUT"
       working-directory: "${{ github.action_path }}"
       env:
         NEXT_RELEASE_TAG: "${{ inputs.next-tag }}"
